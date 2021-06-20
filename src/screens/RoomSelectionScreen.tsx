@@ -1,5 +1,6 @@
 import React from "react";
 import { Text, StyleSheet, View, Button } from "react-native";
+import ChatRoom from "../components/ChatRoom";
 
 const RoomSelectionScreen = props => {
     return <View>
