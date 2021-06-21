@@ -1,6 +1,6 @@
 import React from "react";
 import { Text, StyleSheet, View, Button } from "react-native";
-import Authentication from "../components/Authentication";
+import Authentication from "../utility/Authentication";
 
 const LoginScreen = props => {
     return <View>

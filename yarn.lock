@@ -1237,7 +1237,7 @@
   dependencies:
     "nanoid" "^3.1.15"
 
-"@react-navigation/stack@^5.1.1", "@react-navigation/stack@^5.4.1":
+"@react-navigation/stack@^5.1.1", "@react-navigation/stack@^5.14.5":
   "integrity" "sha512-hpdn1SS0tc3/3atkV2Q2y++n5B4e0rUcCj4W43PODMu72yX2m0LkKAAcpkPDCWAvwnLLIoLAEl5BEifZigl/6A=="
   "resolved" "https://registry.npmjs.org/@react-navigation/stack/-/stack-5.14.5.tgz"
   "version" "5.14.5"
