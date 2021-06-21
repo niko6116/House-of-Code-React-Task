@@ -12,11 +12,11 @@ message: The content of the message.
 time: The time the message was sent.
 */
 const ChatMessage = props => {
-    const d = new Date(parseInt(props.time));
+    const date = new Date(parseInt(props.time));
 
     return <View>
         <Text style={styles.name}>{props.name}</Text>
-        <Text style={styles.time}>{d.toUTCString()}</Text>
+        <Text style={styles.time}>{date.toUTCString()}</Text>
         <Text style={styles.message}>{props.message}</Text>
     </View>;
 };
@@ -26,10 +26,10 @@ const styles = StyleSheet.create({
         fontSize: 25
     },
     time: {
-        fontSize: 15
+        fontSize: 12
     },
     message: {
-        fontSize: 20
+        fontSize: 18
     }
 });
 
