@@ -25,7 +25,7 @@ function openChatRoom() {
 
 const styles = StyleSheet.create({
     roomName: {
-        fontSize: 25
+        fontSize: 30
     },
     roomDescription: {
         fontSize: 15
