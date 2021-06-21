@@ -3,8 +3,10 @@ import { Text, StyleSheet, View, Button } from "react-native";
 
 /*
 Component representing a chat room.
-Should be put in a list om available chat rooms.
+Should be put in a list of available chat rooms.
 Props:
+screenProps: The props from a screen that is registered in the navigator.
+key: The unique id used to find the room in the database.
 name: The name of the room.
 description: The description of the room.
 */
@@ -14,18 +16,18 @@ const ChatRoom = props => {
         <Text style={styles.roomDescription}>{props.description}</Text>
         <Button
             title="Go to room"
-            onPress={() => openChatRoom()}
+            onPress={() => props.screenProps.navigation.navigate("Chat")}
         />
     </View>;
 };
 
-function openChatRoom() {
+function openChatRoom(props: any) {
 
 }
 
 const styles = StyleSheet.create({
     roomName: {
-        fontSize: 30
+        fontSize: 25
     },
     roomDescription: {
         fontSize: 15

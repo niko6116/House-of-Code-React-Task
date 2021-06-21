@@ -1,17 +1,26 @@
 import React from "react";
-import { FlatListProperties } from "react-native";
 import { Text, StyleSheet, View, FlatList } from "react-native";
 import ChatRoom from "../components/ChatRoom";
+import DatabaseUtility from "../utility/DatabaseUtility";
 
 const RoomSelectionScreen = props => {
-  const rooms = [
-    { name: "Room num 1", description: "First room" },
-    { name: "Room num 2", description: "Second room" },
-    { name: "Room num 3", description: "Third room" }
-  ];
+  //DatabaseUtility.readRooms();
+
+  // Temporary placeholder data
+  const rooms =
+    [
+      { key: "1", name: "Room num 1", description: "First room" },
+      { key: "2", name: "Room num 2", description: "Second room" },
+      { key: "3", name: "Room num 3", description: "Third room" }
+    ];
 
   const Item = ({ item }) => {
-    return <ChatRoom name={item.name} s description={item.description} />;
+    return <ChatRoom
+      screenProps={props}
+      key={item.key}
+      name={item.name}
+      description={item.description}
+    />;
   };
 
   return <View>

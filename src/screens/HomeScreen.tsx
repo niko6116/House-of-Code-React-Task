@@ -3,12 +3,10 @@ import { Text, StyleSheet, View, Button } from "react-native";
 import Authentication from "../utility/Authentication";
 
 const HomeScreen = props => {
+  Authentication(props);
+
   return <View>
     <Text style={styles.text}>Home Screen</Text>
-    <Button
-      title="Go to chat rooms"
-      onPress={ () => props.navigation.navigate("RoomSelection") }
-    />
   </View>;
 };
 

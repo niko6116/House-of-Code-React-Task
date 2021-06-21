@@ -2,34 +2,35 @@ import React from "react";
 import { Text, StyleSheet, View, Button } from "react-native";
 
 /*
-Component representing a chat room.
-Should be put in a list om available chat rooms.
+Component representing a chat message.
+Should be put in a list om messages.
 Props:
-name: The name of the room.
-description: The description of the room.
+key: The unique id used to find the message in the database.
+name: The name of the user.
+userID: The unique id for the user.
+message: The content of the message.
+time: The time the message was sent.
 */
-const ChatRoom = props => {
+const ChatMessage = props => {
+    const d = new Date(parseInt(props.time));
+
     return <View>
-        <Text style={styles.roomName}>{props.name}</Text>
-        <Text style={styles.roomDescription}>{props.description}</Text>
-        <Button
-            title="Go to room"
-            onPress={() => openChatRoom()}
-        />
+        <Text style={styles.name}>{props.name}</Text>
+        <Text style={styles.time}>{d.toUTCString()}</Text>
+        <Text style={styles.message}>{props.message}</Text>
     </View>;
 };
 
-function openChatRoom() {
-
-}
-
 const styles = StyleSheet.create({
-    roomName: {
-        fontSize: 30
+    name: {
+        fontSize: 25
     },
-    roomDescription: {
+    time: {
         fontSize: 15
+    },
+    message: {
+        fontSize: 20
     }
 });
 
-export default ChatRoom;
+export default ChatMessage;

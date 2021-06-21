@@ -12,3 +12,7 @@ function readRooms() {
             console.log('Data: ', snapshot.val());
         });
 }
+
+export default {
+    readRooms
+};
