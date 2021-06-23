@@ -14,7 +14,7 @@ time: The time the message was sent.
 const ChatMessage = props => {
     const date = new Date(parseInt(props.time));
 
-    return <View>
+    return <View style={styles.main}>
         <Text style={styles.name}>{props.name}</Text>
         <Text style={styles.time}>{date.toUTCString()}</Text>
         <Text style={styles.message}>{props.message}</Text>
@@ -30,7 +30,11 @@ const styles = StyleSheet.create({
     },
     message: {
         fontSize: 18
-    }
+    },
+    main: {
+        marginHorizontal: 5,
+        marginVertical: 5
+      }
 });
 
 export default ChatMessage;
