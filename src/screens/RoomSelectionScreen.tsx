@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, StyleSheet, View, FlatList } from "react-native";
+import { Text, StyleSheet, View, FlatList, Button } from "react-native";
 import ChatRoom from "../components/ChatRoom";
 import DatabaseUtility from "../utility/DatabaseUtility";
 import RoomState from "../utility/RoomState";
@@ -20,12 +20,20 @@ const RoomSelectionScreen = props => {
 
   return <View>
     <Text style={styles.text}>Room Selection</Text>
+    <Button
+      title="Logout"
+      onPress={() => logoutButtonPressed(props)}
+    />
     <FlatList
       data={rooms}
       renderItem={Item}
     ></FlatList>
   </View>;
 };
+
+function logoutButtonPressed(props: any) {
+  props.navigation.goBack(null);
+}
 
 const styles = StyleSheet.create({
   text: {
