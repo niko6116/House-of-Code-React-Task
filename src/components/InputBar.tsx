@@ -1,11 +1,13 @@
 import React from "react";
 import { Text, StyleSheet, View, TextInput } from "react-native";
 
-const InputBar = (input) => {
+const InputBar = ({ input, onInputChange }) => {
   return <View style={styles.input}>
     <TextInput
-      style={styles.inputStyle} placeholder="Input"
+      style={styles.inputStyle}
+      placeholder="Input"
       value={input}
+      onChangeText={newInput => onInputChange(newInput)}
     />
   </View>;
 };

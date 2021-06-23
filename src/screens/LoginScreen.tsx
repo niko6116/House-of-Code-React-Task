@@ -4,27 +4,33 @@ import Authentication from "../utility/Authentication";
 import InputBar from "../components/InputBar";
 
 const LoginScreen = props => {
-  const username = "";
-  const password = "";
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
   return <View>
-    <Text style={styles.mainText}>Login with Google</Text>
+    <Text style={styles.mainText}>Login (not implemented)</Text>
     <View style={styles.login}>
       <Text style={styles.secondText}>Username</Text>
-      <InputBar>input={username}</InputBar>
+      <InputBar
+        input={username}
+        onInputChange={newUsername => setUsername(newUsername)}
+      />
       <Text style={styles.secondText}>Password</Text>
-      <InputBar>input={password}</InputBar>
+      <InputBar
+        input={password}
+        onInputChange={newPassword => setPassword(newPassword)}
+      />
     </View>
     <Button
-      title="Login"
+      title="Go to chat rooms"
       onPress={() => loginButtonPressed(props, username, password)}
     />
   </View>;
 };
 
 function loginButtonPressed(props: any, username: string, password: string) {
-
-  props.navigation.navigate("RoomSelection")
+  // Login functionality not implemented.
+  props.navigation.navigate("RoomSelection") // Go to chat rooms.
 }
 
 const styles = StyleSheet.create({

@@ -2,10 +2,10 @@ import React from "react";
 import { Text, StyleSheet, View, FlatList } from "react-native";
 import ChatRoom from "../components/ChatRoom";
 import DatabaseUtility from "../utility/DatabaseUtility";
-import RoomStorage from "../utility/RoomStorage";
+import RoomState from "../utility/RoomState";
 
 const RoomSelectionScreen = props => {
-  var rooms = RoomStorage.rooms
+  var rooms = RoomState.rooms
   console.log("Rooms: ", rooms);
 
   const Item = ({ item }) => {

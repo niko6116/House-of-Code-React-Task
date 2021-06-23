@@ -1,7 +1,7 @@
 import React from "react";
 import { Text, StyleSheet, View, Button } from "react-native";
 import DatabaseUtility from "../utility/DatabaseUtility";
-import RoomStorage from "../utility/RoomStorage";
+import RoomState from "../utility/RoomState";
 
 /*
 Component representing a chat room.
@@ -25,8 +25,8 @@ const ChatRoom = props => {
 
 function openChatRoom(props: any) {
     console.log("Room id: ", props.id);
-    RoomStorage.currentRoom = props.id; // Sets current room id
-    RoomStorage.messagesLoaded = false;
+    RoomState.currentRoom = props.id; // Sets current room id
+    RoomState.messagesLoaded = false;
     props.screenProps.navigation.navigate("Chat") // Opens room
 }
 

@@ -1,34 +1,21 @@
 import React, { useState } from "react";
-import { Text, StyleSheet, View, FlatList } from "react-native";
+import { Text, StyleSheet, View, FlatList, Button } from "react-native";
 import ChatMessage from "../components/ChatMessage";
 import InputBar from "../components/InputBar";
 import DatabaseUtility from "../utility/DatabaseUtility";
-import RoomStorage from "../utility/RoomStorage";
+import RoomState from "../utility/RoomState";
 
 const ChatScreen = props => {
   const [messages, setMessages] = useState([]);
+  const [input, setInput] = useState("");
 
   // Reads messages from the database
-  if (!RoomStorage.messagesLoaded) {
-    RoomStorage.messagesLoaded = true;
+  if (!RoomState.messagesLoaded) {
+    RoomState.messagesLoaded = true;
     DatabaseUtility.readMessages(setMessages)
   }
 
   console.log("Messages: ", messages);
-
-  // Temporary placeholder data
-  /*const messages =
-    [
-      { key: "1", name: "Nikolaj", userID: "", text: "Test message number 1", time: "1624203110000" },
-      { key: "2", name: "Nikolaj", userID: "", text: "Test message number 2", time: "1624203120000" },
-      { key: "3", name: "Nikolaj", userID: "", text: "Test message number 3", time: "1624203130000" },
-      { key: "4", name: "Nikolaj", userID: "", text: "Test message number 4", time: "1624203140000" },
-      { key: "5", name: "Nikolaj", userID: "", text: "Test message number 5", time: "1624203150000" },
-      { key: "6", name: "Nikolaj", userID: "", text: "Test message number 6", time: "1624203160000" },
-      { key: "7", name: "Nikolaj", userID: "", text: "Test message number 7", time: "1624203170000" },
-      { key: "8", name: "Nikolaj", userID: "", text: "Test message number 8", time: "1624203180000" },
-      { key: "9", name: "Nikolaj", userID: "", text: "Test message number 9", time: "1624203190000" }
-    ];*/
 
   const Item = ({ item }) => {
     return <ChatMessage
@@ -49,10 +36,34 @@ const ChatScreen = props => {
       ></FlatList>
     </View>
     <View style={styles.bottom}>
-      <InputBar />
+      <View style={styles.bottomHorizontal}>
+        <View style={styles.bottomInput}>
+          <InputBar
+            input={input}
+            onInputChange={newInput => setInput(newInput)}
+          />
+        </View>
+        <View style={styles.bottomButton}>
+          <Button
+            title="Send"
+            onPress={() => { sendButtonPressed(input) }}
+          />
+        </View>
+      </View>
     </View>
   </View>;
 };
+
+function sendButtonPressed(input: string) {
+  console.log("Text input: ", input);
+
+  const text = input;
+  const time = Date.now();
+  const user = "Guest User"; // Placeholder
+  const userID = "0000xxxx"; // Placeholder
+
+  DatabaseUtility.writeMessage(text, time, user, userID);
+}
 
 const styles = StyleSheet.create({
   text: {
@@ -70,6 +81,16 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "flex-end",
     marginBottom: 25
+  },
+  bottomHorizontal: {
+    flexDirection: "row",
+    justifyContent: "flex-end",
+  },
+  bottomInput: {
+    width: 300
+  },
+  bottomButton: {
+    marginEnd: 10
   }
 });
 
