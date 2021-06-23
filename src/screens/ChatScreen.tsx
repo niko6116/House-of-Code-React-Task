@@ -7,15 +7,15 @@ const ChatScreen = props => {
   // Temporary placeholder data
   const messages =
     [
-      { key: "1", name: "Nikolaj", userID: "", message: "Test message number 1", time: "1576623110000" },
-      { key: "2", name: "Nikolaj", userID: "", message: "Test message number 2", time: "1576623120000" },
-      { key: "3", name: "Nikolaj", userID: "", message: "Test message number 3", time: "1576623130000" },
-      { key: "4", name: "Nikolaj", userID: "", message: "Test message number 4", time: "1576623140000" },
-      { key: "5", name: "Nikolaj", userID: "", message: "Test message number 5", time: "1576623150000" },
-      { key: "6", name: "Nikolaj", userID: "", message: "Test message number 6", time: "1576623160000" },
-      { key: "7", name: "Nikolaj", userID: "", message: "Test message number 7", time: "1576623170000" },
-      { key: "8", name: "Nikolaj", userID: "", message: "Test message number 8", time: "1576623180000" },
-      { key: "9", name: "Nikolaj", userID: "", message: "Test message number 9", time: "1576623190000" }
+      { key: "1", name: "Nikolaj", userID: "", message: "Test message number 1", time: "1624203110000" },
+      { key: "2", name: "Nikolaj", userID: "", message: "Test message number 2", time: "1624203120000" },
+      { key: "3", name: "Nikolaj", userID: "", message: "Test message number 3", time: "1624203130000" },
+      { key: "4", name: "Nikolaj", userID: "", message: "Test message number 4", time: "1624203140000" },
+      { key: "5", name: "Nikolaj", userID: "", message: "Test message number 5", time: "1624203150000" },
+      { key: "6", name: "Nikolaj", userID: "", message: "Test message number 6", time: "1624203160000" },
+      { key: "7", name: "Nikolaj", userID: "", message: "Test message number 7", time: "1624203170000" },
+      { key: "8", name: "Nikolaj", userID: "", message: "Test message number 8", time: "1624203180000" },
+      { key: "9", name: "Nikolaj", userID: "", message: "Test message number 9", time: "1624203190000" }
     ];
 
   const Item = ({ item }) => {
