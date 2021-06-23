@@ -61,7 +61,7 @@ function readMessages(setMessages: Dispatch<SetStateAction<any[]>>) {
     const data = [];
 
     // Pull data from database.
-    ref.on("value", snapshot => {
+    ref.orderByChild("messageTime").on("value", snapshot => {
         const exists = snapshot.val() !== null;
 
         // If snapshot is not empty.
