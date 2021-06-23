@@ -1,6 +1,7 @@
 import React from "react";
 import { Text, StyleSheet, View, FlatList } from "react-native";
 import ChatMessage from "../components/ChatMessage";
+import InputBar from "../components/InputBar";
 
 const ChatScreen = props => {
   // Temporary placeholder data
@@ -21,18 +22,35 @@ const ChatScreen = props => {
     />;
   };
 
-  return <View>
+  return <View style={styles.main}>
     <Text style={styles.text}>Chat Room</Text>
-    <FlatList
-      data={messages}
-      renderItem={Item}
-    ></FlatList>
+    <View style={styles.messages}>
+      <FlatList
+        data={messages}
+        renderItem={Item}
+      ></FlatList>
+    </View>
+    <View style={styles.bottom}>
+      <InputBar />
+    </View>
   </View>;
 };
 
 const styles = StyleSheet.create({
   text: {
     fontSize: 30
+  },
+  messages: {
+    marginHorizontal: 10,
+    marginVertical: 10
+  },
+  main: {
+    flex: 1
+  },
+  bottom: {
+    flex: 1,
+    justifyContent: "flex-end",
+    marginBottom: 25
   }
 });
 
