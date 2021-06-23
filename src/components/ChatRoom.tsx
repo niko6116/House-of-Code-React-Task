@@ -26,8 +26,12 @@ const ChatRoom = props => {
 function openChatRoom(props: any) {
     console.log("Room id: ", props.id);
     RoomStorage.currentRoom = props.id; // Sets current room id
-    RoomStorage.messages = DatabaseUtility.readMessages(); // Reads messages from the database
+    RoomStorage.messagesLoaded = false;
     props.screenProps.navigation.navigate("Chat") // Opens room
+}
+
+function refreshPage() {
+    window.location.reload(false);
 }
 
 const styles = StyleSheet.create({

@@ -8,7 +8,7 @@ Props:
 key: The unique id used to find the message in the database.
 name: The name of the user.
 userID: The unique id for the user.
-message: The content of the message.
+text: The content of the message.
 time: The time the message was sent.
 */
 const ChatMessage = props => {
@@ -17,7 +17,7 @@ const ChatMessage = props => {
     return <View style={styles.main}>
         <Text style={styles.name}>{props.name}</Text>
         <Text style={styles.time}>{date.toUTCString()}</Text>
-        <Text style={styles.message}>{props.message}</Text>
+        <Text style={styles.text}>{props.text}</Text>
     </View>;
 };
 
@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
     time: {
         fontSize: 12
     },
-    message: {
+    text: {
         fontSize: 18
     },
     main: {
