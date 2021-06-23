@@ -2,10 +2,14 @@ import React from "react";
 import { Text, StyleSheet, View, FlatList } from "react-native";
 import ChatMessage from "../components/ChatMessage";
 import InputBar from "../components/InputBar";
+import RoomStorage from "../utility/RoomStorage";
 
 const ChatScreen = props => {
+  const messages = RoomStorage.messages;
+  console.log("Messages: ", messages);
+  
   // Temporary placeholder data
-  const messages =
+  /*const messages =
     [
       { key: "1", name: "Nikolaj", userID: "", message: "Test message number 1", time: "1624203110000" },
       { key: "2", name: "Nikolaj", userID: "", message: "Test message number 2", time: "1624203120000" },
@@ -16,7 +20,7 @@ const ChatScreen = props => {
       { key: "7", name: "Nikolaj", userID: "", message: "Test message number 7", time: "1624203170000" },
       { key: "8", name: "Nikolaj", userID: "", message: "Test message number 8", time: "1624203180000" },
       { key: "9", name: "Nikolaj", userID: "", message: "Test message number 9", time: "1624203190000" }
-    ];
+    ];*/
 
   const Item = ({ item }) => {
     return <ChatMessage

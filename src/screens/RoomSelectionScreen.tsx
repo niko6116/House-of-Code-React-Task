@@ -2,22 +2,17 @@ import React from "react";
 import { Text, StyleSheet, View, FlatList } from "react-native";
 import ChatRoom from "../components/ChatRoom";
 import DatabaseUtility from "../utility/DatabaseUtility";
+import RoomStorage from "../utility/RoomStorage";
 
 const RoomSelectionScreen = props => {
-  //DatabaseUtility.readRooms();
-
-  // Temporary placeholder data
-  const rooms =
-    [
-      { key: "1", name: "Room num 1", description: "First room" },
-      { key: "2", name: "Room num 2", description: "Second room" },
-      { key: "3", name: "Room num 3", description: "Third room" }
-    ];
+  var rooms = RoomStorage.rooms
+  console.log("Rooms: ", rooms);
 
   const Item = ({ item }) => {
     return <ChatRoom
       screenProps={props}
       key={item.key}
+      id={item.id}
       name={item.name}
       description={item.description}
     />;

@@ -1,8 +1,12 @@
 import React from "react";
 import { Text, StyleSheet, View, Button } from "react-native";
 import Authentication from "../utility/Authentication";
+import DatabaseUtility from "../utility/DatabaseUtility";
+import RoomStorage from "../utility/RoomStorage";
 
 const HomeScreen = props => {
+  RoomStorage.rooms = DatabaseUtility.readRooms();
+
   Authentication(props);
 
   return <View>
