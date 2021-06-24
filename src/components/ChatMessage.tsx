@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, StyleSheet, View, Button } from "react-native";
+import { Text, StyleSheet, View } from "react-native";
 
 /*
 Component representing a chat message.
@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
     main: {
         marginHorizontal: 5,
         marginVertical: 5
-      }
+    }
 });
 
 export default ChatMessage;

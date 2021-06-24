@@ -6,7 +6,9 @@ import DatabaseUtility from "../utility/DatabaseUtility";
 import RoomState from "../utility/RoomState";
 
 const ChatScreen = props => {
+  // Chat messages.
   const [messages, setMessages] = useState([]);
+  // User input.
   const [input, setInput] = useState("");
 
   // Reads messages from the database
@@ -17,6 +19,7 @@ const ChatScreen = props => {
 
   console.log("Messages: ", messages);
 
+  // Chat message item.
   const Item = ({ item }) => {
     return <ChatMessage
       key={item.key}
@@ -54,6 +57,10 @@ const ChatScreen = props => {
   </View>;
 };
 
+/**
+ * Send message in chat room.
+ * @param input 
+ */
 function sendButtonPressed(input: string) {
   console.log("Text input: ", input);
 

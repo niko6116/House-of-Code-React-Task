@@ -1,5 +1,3 @@
-import React, { Props } from "react";
-import { Text } from "react-native";
 import auth from "@react-native-firebase/auth";
 
 /*
@@ -9,8 +7,10 @@ function Authentication(props: any) {
   const user = auth().currentUser;
 
   if (!user) {
+    // User not logged in - Go to Login.
     props.navigation.navigate("Login")
   } else {
+    // User logged in - Go to Room Selection.
     props.navigation.navigate("RoomSelection")
   }
 }

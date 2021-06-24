@@ -1,8 +1,9 @@
-import {
-    GoogleSignin,
-    statusCodes,
-} from '@react-native-google-signin/google-signin';
+import { GoogleSignin, statusCodes, } from '@react-native-google-signin/google-signin';
 
+/**
+ * Sign in with Google.
+ * @returns 
+ */
 function signIn() {
     console.log("Google Sign in started");
     const signIn = async () => {
@@ -33,6 +34,10 @@ function signIn() {
     return signIn;
 }
 
+/**
+ * Check if you are signed in with Google.
+ * @returns 
+ */
 function isSignedIn() {
     const isSignedIn = async () => {
         const isSignedIn = await GoogleSignin.isSignedIn();
@@ -42,6 +47,10 @@ function isSignedIn() {
     return isSignedIn;
 }
 
+/**
+ * Get currently signed in Google user.
+ * @returns 
+ */
 function getCurrentUser() {
     const getCurrentUser = async () => {
         const currentUser = await GoogleSignin.getCurrentUser();
@@ -51,6 +60,10 @@ function getCurrentUser() {
     return getCurrentUser;
 }
 
+/**
+ * Sign out from your Google account.
+ * @returns 
+ */
 function signOut() {
     const signOut = async () => {
         try {

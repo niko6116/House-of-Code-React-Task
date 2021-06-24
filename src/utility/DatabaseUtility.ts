@@ -1,10 +1,6 @@
-import React, { Component, Dispatch, SetStateAction, useEffect } from "react";
-import { Text } from "react-native";
-import auth from "@react-native-firebase/auth";
-import database, { FirebaseDatabaseTypes } from '@react-native-firebase/database';
+import { Dispatch, SetStateAction } from "react";
+import database from '@react-native-firebase/database';
 import RoomState from "./RoomState";
-
-
 
 /*
 Return all chat rooms from the database.

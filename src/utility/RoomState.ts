@@ -1,5 +1,3 @@
-import React from "react";
-import { Text, StyleSheet, View, TextInput } from "react-native";
 
 /*
 Manages the state of the chat rooms.

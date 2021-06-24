@@ -1,13 +1,14 @@
 import React from "react";
 import { Text, StyleSheet, View, FlatList, Button } from "react-native";
 import ChatRoom from "../components/ChatRoom";
-import DatabaseUtility from "../utility/DatabaseUtility";
 import RoomState from "../utility/RoomState";
 
 const RoomSelectionScreen = props => {
+  // Available chat rooms.
   var rooms = RoomState.rooms
   console.log("Rooms: ", rooms);
 
+  // Room item.
   const Item = ({ item }) => {
     return <ChatRoom
       screenProps={props}

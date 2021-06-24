@@ -1,7 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import { Text, StyleSheet, View, Button } from "react-native";
-import Authentication from "../utility/Authentication";
-import InputBar from "../components/InputBar";
 import { GoogleSigninButton, } from '@react-native-google-signin/google-signin';
 import GoogleSigninUtility from "../utility/GoogleSigninUtility";
 

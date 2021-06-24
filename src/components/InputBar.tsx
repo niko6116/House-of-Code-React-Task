@@ -1,6 +1,11 @@
 import React from "react";
-import { Text, StyleSheet, View, TextInput } from "react-native";
+import { StyleSheet, View, TextInput } from "react-native";
 
+/**
+ * A styled text input.
+ * @param param0 
+ * @returns 
+ */
 const InputBar = ({ input, onInputChange }) => {
   return <View style={styles.input}>
     <TextInput

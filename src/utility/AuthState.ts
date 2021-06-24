@@ -1,6 +1,7 @@
-import * as React from 'react';
 import { useEffect, useState } from 'react';
 import auth, { FirebaseAuthTypes } from '@react-native-firebase/auth';
+
+// Not in use
 
 function AuthState() {
   const [loading, setLoading] = useState<boolean>(true);
